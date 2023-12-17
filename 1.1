@@ -1,0 +1,21 @@
+def Polynomus():
+    print('Введите степень многочлена, значение х0 ')
+    stepen = int(input())
+    x0 = int(input())
+    mass = [0]*(n+1) #массив с коэффициентами
+    print('введите значения коэффициентов ')
+    for i in range (stepen + 1):
+        mass[i] = int(input())
+
+    Poly1 = mass[0] # нахождение многочлена
+    for i in range (stepen):
+        Poly1 *= x0
+        Poly1 += mass[i + 1]
+    print('Значение многочлена: ', Poly1)
+
+    Poly2 = mass[0]*n # нахождение производной
+    for i in range(1, stepen):
+        Poly2 *= x0
+        Poly2 += mass[i] * (stepen - i)
+    print("Значение производной: ", Poly2)
+Polynomus()
