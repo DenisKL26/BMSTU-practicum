@@ -1,0 +1,21 @@
+def maxk(mass,k):
+    ans = max_sum = 0
+    n = len(mass) 
+    
+    for i in range(k, n + 1):
+        ans = sum(mass[i - k : i]) 
+        if ans > max_sum:
+            max_sum = ans     
+    return max_sum
+
+n = int(input("Введите количество элементов: "))
+k = int(input("Введите период: "))
+mass = []
+
+if k < n:
+    print('Введите элементы массива: ')
+    for i in range(n):
+        mass.append(int(input()))
+    print('Ответ: ', maxk(mass, k))
+else:
+    print("Ошибка")
