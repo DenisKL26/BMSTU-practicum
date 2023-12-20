@@ -1,0 +1,25 @@
+def primediv(x):
+    mass = [i for i in range(2, x + 2)]
+    maxx = -99999999999
+
+    for i in range(2,x+2):
+        for j in range(len(mass)):
+            print(mass)
+            if (mass[j] % i == 0) and (mass[j] != i) and (mass[j] in mass):
+                mass[j] = 0
+
+    for i in range(mass.count(0)):
+        mass.remove(0)
+
+    for i in mass:
+        if x % i ==0:
+            if i > maxx:
+                maxx = i
+
+    if x in mass:
+        return "Простое число"
+    else:
+        return maxx
+    
+x = int(input())
+print(primediv(x))
